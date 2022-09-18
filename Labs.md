@@ -1,0 +1,44 @@
+# Linux
+Estrutura de Diretórios Linux 
+
+![linux](https://user-images.githubusercontent.com/113737343/190921030-79c09db5-21b8-4952-be21-c033360d8ad1.png)
+
+
+A hierarquia de diretórios do Linux não é mais difícil ou mais fácil, é o tipo de coisa que é simplesmente diferente. Tanto o Disco C do Windows, quanto a “/” do Linux servem para a mesma coisa, mas fazem isso de formas diferentes.
+Esse layout que podemos observar, segue, em maior parte, o chamado FHS, “Filesystem Hierarchy Standard”, um padrão mantido pela Linux Foundation, que não necessariamente é mantido por todas as distros,.
+Para que servem cada uma das pastas dentro da raiz?
+
+/bin 
+Nesse diretório você encontra os executáveis de diversos programas do lista, como o bash, cat, ls, firefox, etc. Aqui dentro também pode existir links simólicos e shell scripts, que são rotinas de comandos que são executadas em sequência.
+
+/boot
+É uma pasta muito importante, por isso, não mexa aqui se realmente não for necessário. Como o nome sugere, essa é a pasta que contém os arquivos necessários para o seu computador iniciar. Como o seu bootloader, o GRUB, as entradas do Kernel disponíveis para ele e até mesmo o binário do memtest.
+
+/dev
+É a abreviação para “devices”, e como eu já falei diversas vezes, “tudo no Linux são arquivos”. Então, em outras palavras, dentro dessa pasta você encontrará arquivos que correspondem ao seu hardware, arquivos que podem ser configurados e que podem mudar a forma com que um determinado “device” está funcionando. 
+
+/etc
+O nome já foi alvo de várias discussões, como a abreviação de “edit do config”, mas reza a lenda que o próprio Dennis Ritchie teria dito que a intenção era que fosse “et cetera”, desde a época do Unix.
+
+/home
+É uma pasta muito importante, é onde ficam os usuários comuns do sistema, dentro dela você encontra pastas com os nomes dos usuários cadastrados na máquina, 
+
+/mnt
+É um irmão do /media, é a abreviação de “mount”, e ele é pensado para ser um ponto de montagem de unidades de disco feitas pelo próprio usuário manualmente editando o arquivo de configurações FSTAB que fica dentro de /etc.
+
+/opt
+O seu nome se refere a palavra “optional”, é nessa pasta que geralmente se encontram softwares instalados por fabricantes que vendem computadores com Linux ou por softwares 
+
+/proc
+É onde você encontra arquivos que contém informações sobre o sistema e processos dele. Ele é um diretório virtual, esses arquivos não realmente existem no seu disco, eles são criados toda vez que você inicia o computador. Cada processo possui um arquivo ou diretório aqui, então digamos que eu queira saber mais sobre o processo do gnome-shell.
+
+/sbin
+Este diretório é como o /bin, ele armazena binários também, e o “S” no nome é para designar “system binaries”, que são programas que só podem ser acessados pelo administrador do sistema, como o comando “useradd” para adicionar novos usuários, que precisa ser rodado com o sudo com como Root.
+
+/srv 
+É a abreviação de “services”, no seu desktop ela provavelmente vai estar vazia, mas se você estiver rodando um servidor web ou um servidor FTP, você pode armazenar aqui os arquivos que serão acessíveis para outros usuários. O interessante dessa pasta ser separada nesse caso, é que você pode montar ela a partir de um disco separado também, deixando os seus arquivos isolados, ela também está na raiz do sistema, o que é bom para segurança, permitindo que você monte um sistema de permissões diferente em /var/www por exemplo.
+
+/lib              /lib32        /lib64       /libx32
+Todas elas são pastas que contém bibliotecas de software para o sistema operacional e os aplicativos instalados. Um novo programa instalado pode adicionar libs nessas pastas e a palavra “lib”, como você deve imaginar, é a abreviação de “library”, biblioteca em inglês
+
+Com os comandos cd e ls é possível "andar" pelos diretórios e listar seu conteúdo. A aparência das distribuições podem até alterar, mas no terminal, na linha de comando todas são muito parecidas.
